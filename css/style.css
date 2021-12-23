@@ -3,4 +3,18 @@
 }
 body {
  background-color: rgb(207, 224, 224); 
+ margin: 0 auto;
+ background-color: rgb(207, 224, 224);
+ display: inline-block;
+ font-family: 'Poppins', sans-serif;
+ color: red;
+ font-size: 25px;
+ width: 1000px;
+ margin: 20px;
+ text-align: center;
+ image-rendering: center;
+}
+h1 {
+  font-size: 80px;
+  text-align: center;
 }
