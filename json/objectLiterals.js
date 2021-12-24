@@ -2,7 +2,7 @@
 console.log('are you hearing the objectliteral js');
 
 // Stores the min/max hourly customers, and the average cookies per customer, in object properties
-// 1. () Uses a method of that object to generate a random number of customers per hour. 
+// 1. () Uses a method of that object to generate a random number of customers per hour.
 
 // 2.() Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
 
@@ -26,21 +26,19 @@ let firstStore = {
     for(let i = 0; i < hours.length; i++){
       this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
     }
+  },
+  cookiesForEachHour : function(){
+    // console.log('cookiesssss');
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    }
   }
-  // cookiesForEachHour : function(){
-
-  // }
 
 };
-console.log(firstStore);
-console.log('store hours list', hours);
+// console.log(firstStore);
+// console.log('store hours list', hours);
 firstStore.numCustomersPerHour();
-
-
-
-
-
-
+firstStore.cookiesForEachHour();
 
 
 
@@ -50,7 +48,7 @@ let secondStore = {
   custMinHour : 3,
   avgCookiePerSale : 1.2,
 };
-console.log(secondStore);
+// console.log(secondStore);
 
 
 let thirdStore = {
@@ -60,7 +58,7 @@ let thirdStore = {
   avgCookiePerSale : 3.7,
 };
 
-console.log(thirdStore);
+// console.log(thirdStore);
 
 let forthStore = {
   storeName : 'Paris',
@@ -68,7 +66,7 @@ let forthStore = {
   custMinHour : 11,
   avgCookiePerSale : 2.3,
 };
-console.log(forthStore);
+// console.log(forthStore);
 
 let fifthStore = {
   storeName : 'Lima',
@@ -76,17 +74,38 @@ let fifthStore = {
   custMinHour : 2,
   avgCookiePerSale : 4.6,
 };
-console.log(fifthStore);
+// console.log(fifthStore);
 
 
 
 function random(min, max){
   return Math.round(Math.random() * (max - min) + min);
 }
+//                   0       1
+let storeArray = [firstStore];
+
 
 let ulElement = document.getElementById('storeList');
 console.log(ulElement);
 
 
-// need some li's
-// we need the times of the days then we also need cookies each hour.
+// console.log('store Array',storeArray[0].hourlyCustomers);
+
+for(let i = 0; i < storeArray.length; i++){
+  console.log('in the for loop',storeArray[i]);
+  for(let j = 0; j < hours.length; j++){
+    // console.log('inside for loop J: ', storeArray[i].hourlyCookies[j]);
+    // create need some li's
+    // create variable
+    // set the textContent to that li
+    // then we need to append that li to our ul variable ulElement
+
+
+
+
+    
+
+
+
+  }
+}
