@@ -9,19 +9,20 @@
 body {
  background-color: rgb(207, 224, 224); 
  margin: 0 auto;
- display: inline-block;
+ /* width: 1000px; */
+ /* display: inline-block; */
  font-family: 'Poppins', sans-serif;
  color: red;
  font-size: 25px;
- width: 1000px;
- margin: 20px;
+ 
+ /* margin: 20px; */
  text-align: center;
  image-rendering: center;
 }
 h1 {
   font-size: 80px;
   text-align: center;
-  background-image: ;
+  /* background-image: ; */
 }
 nav {
   /* border: 5px; */
@@ -31,3 +32,15 @@ h2 {
   font-size: 50px;
   padding: 50px;
 }
+
+header {
+  height: 250px;
+  background-image: url('../img/waveBackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 450px;
+}
+
+/* img {
+  height: 100px;
+  width: 100px;
+} */
