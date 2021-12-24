@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
 }
+
+/* image {
+  size: width 1000px;
+} */
+
 body {
  background-color: rgb(207, 224, 224); 
  margin: 0 auto;
- background-color: rgb(207, 224, 224);
  display: inline-block;
  font-family: 'Poppins', sans-serif;
  color: red;
@@ -17,4 +21,13 @@ body {
 h1 {
   font-size: 80px;
   text-align: center;
+  background-image: ;
+}
+nav {
+  /* border: 5px; */
+ background-color: crimson;
+}
+h2 {
+  font-size: 50px;
+  padding: 50px;
 }
