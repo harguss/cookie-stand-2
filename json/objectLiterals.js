@@ -37,18 +37,7 @@ console.log('store hours list', hours);
 firstStore.numCustomersPerHour();
 
 
-function random(min, max){
-  return Math.round(Math.random() * (max - min) + min);
-}
 
-// custEachHour: [],
-// cookieEachHour: [],
-// totalDailyCookies: 0,
-// calcCustomersEachHour: function(){
-//   for(let i = 0; i < hours.length; i++){
-//     this.customersEachHour.push(random(this.minCustomerPerHour, this.maxCustomerPerHour));
-//   }
-// },
 
 
 
@@ -87,6 +76,17 @@ let fifthStore = {
   custMinHour : 2,
   avgCookiePerSale : 4.6,
 };
-
 console.log(fifthStore);
 
+
+
+function random(min, max){
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+let ulElement = document.getElementById('storeList');
+console.log(ulElement);
+
+
+// need some li's
+// we need the times of the days then we also need cookies each hour.
