@@ -2,42 +2,44 @@
   box-sizing: border-box;
 }
 
-/* image {
-  size: width 1000px;
-} */
-
 body {
- background-color: rgb(207, 224, 224); 
+ background-color: rgb(207, 224, 224);  
  margin: 0 auto;
  /* width: 1000px; */
  /* display: inline-block; */
- font-family: 'Poppins', sans-serif;
- color: red;
+ font-family: 'Kanit', sans-serif;
+ color: rgb(201, 31, 12);
  font-size: 25px;
- 
- /* margin: 20px; */
  text-align: center;
- image-rendering: center;
-}
+ }
 h1 {
-  font-size: 80px;
+  font-size: 100px;
   text-align: center;
-  /* background-image: ; */
+  padding-top: 20px;
+  
 }
 nav {
-  /* border: 5px; */
- background-color: crimson;
+ background-color: rgb(201, 31, 12);
+ /* background-image: url('../img/salmon.png'); */
+ background-size: 60px;
+ color: rgb(236, 236, 241);
+
+ /* background-repeat: no-repeat; */
+ /* padding-top: 10px;   */
 }
 h2 {
   font-size: 50px;
   padding: 50px;
 }
+div {
+  width: 1750px;
+}
 
 header {
-  height: 250px;
+  height: 170px;
   background-image: url('../img/waveBackground.jpeg');
-  background-repeat: no-repeat;
-  background-size: 100% 450px;
+  /* background-repeat: no-repeat; */
+  background-size: 50% 550px;
 }
 
 /* img {

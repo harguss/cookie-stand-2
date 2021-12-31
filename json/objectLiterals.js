@@ -47,8 +47,18 @@ let secondStore = {
   custMaxHour : 24,
   custMinHour : 3,
   avgCookiePerSale : 1.2,
+  hourlyCustomers : [],
+  hourlyCookies : [],
+  numCustomersPerHour: function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCustomers.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    }
+  }
+
 };
 // console.log(secondStore);
+secondStore.numCustomersPerHour();
+secondStore.cookiesForEachHour();
 
 
 let thirdStore = {
@@ -56,6 +66,11 @@ let thirdStore = {
   custMaxHour : 38,
   custMinHour : 11,
   avgCookiePerSale : 3.7,
+  hourlyCustomers : [];
+  hourlyCookies : [];
+  numCustomersPerHour: function(){
+    for(let i = 0; i < hours.length; )
+  }
 };
 
 // console.log(thirdStore);
@@ -100,6 +115,7 @@ for(let i = 0; i < storeArray.length; i++){
     // set the textContent to that li
     // then we need to append that li to our ul variable ulElement
 
+// let listItem = textContent
 
 
 
