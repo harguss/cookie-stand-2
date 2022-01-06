@@ -1,45 +1,76 @@
 * {
   box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+  /* color: rgb(201, 31, 12); */
 }
-
-body {
- background-image: url('../img/fishwallpaper.jpg');
- background-repeat: no-repeat;
- background-size: 67%;
- background-position-x: center;
- background-color: rgb(207, 224, 224);  
- margin: 0 auto;
- font-family: 'Kanit', sans-serif;
- color: rgb(201, 31, 12);
- font-size: 25px;
- text-align: center;
- }
-h1 {
-  font-size: 110px;
-  text-align: center;
-  padding-top: 40px;
-  
+html, body {
+  overflow: auto;
 }
-nav {
- background-color: rgb(201, 31, 12);
- /* background-image: url('../img/salmon.png'); */
- background-size: 60px;
-
- /* background-repeat: no-repeat; */
- /* padding-top: 10px;   */
-}
-h2 {
-  font-size: 50px;
-  padding: 50px;
-}
-
-
 header {
-  height: 170px;
+  height: 220px;
   background-image: url('../img/waveBackground.jpeg');
   /* background-repeat: no-repeat; */
   background-size: 50%;
+  color: rgb(201, 31, 12);
+  border-top: rgb(201, 31, 12) 40px;
 }
+nav {
+  background-color: rgb(201, 31, 12);
+  /* background-image: url('../img/salmon.png'); */
+  background-size: 60px;
+  text-align: center;
+  color: rgb(168, 227, 237);
+  height: 40px;
+ /* background-repeat: no-repeat; */
+   padding-top: 10px;
+     
+ }
+
+body {
+  /* overflow:auto; */
+  /* width: 100%; */
+  background-image: url('../img/free-japanese-fan-wallpapers.jpeg'); 
+  background-color: rgb(207, 224, 224); 
+}
+
+
+#fishBackground {
+  background-image: url('../img/fishwallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: rgb(201, 31, 12), 10px;
+  height: 3000px;
+}  
+h1 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 110px;
+  text-align: center;
+  padding-top: 50px;
+  
+}
+
+h2 {
+  font-size: 70px;
+  padding: 50px; 
+  text-align: center;
+}
+p {
+  padding-top: 30px;
+  padding-left: 110px;
+  padding-right: 110px;
+  text-align: left;
+}
+div {
+  font-family: 'Kanit', sans-serif;
+  color: rgb(201, 31, 12);
+  font-size: 25px;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+
+
 footer {
   background-color: rgb(201, 31, 12);
   /* background-image: url('../img/salmon.png');  */
