@@ -35,7 +35,7 @@ let firstStore = {
   }
 
 };
-// console.log(firstStore);
+console.log(firstStore);
 // console.log('store hours list', hours);
 firstStore.numCustomersPerHour();
 firstStore.cookiesForEachHour();
@@ -51,12 +51,17 @@ let secondStore = {
   hourlyCookies : [],
   numCustomersPerHour: function(){
     for(let i = 0; i < hours.length; i++){
-      this.hourlyCustomers.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+      this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
+    }
+  },
+  cookiesForEachHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
     }
   }
 
 };
-// console.log(secondStore);
+console.log(secondStore);
 secondStore.numCustomersPerHour();
 secondStore.cookiesForEachHour();
 
@@ -66,30 +71,68 @@ let thirdStore = {
   custMaxHour : 38,
   custMinHour : 11,
   avgCookiePerSale : 3.7,
-  hourlyCustomers : [];
-  hourlyCookies : [];
+  hourlyCustomers : [],
+  hourlyCookies : [],
   numCustomersPerHour: function(){
-    for(let i = 0; i < hours.length; )
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
+    }
+  },
+  cookiesForEachHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    }
   }
 };
 
-// console.log(thirdStore);
+console.log(thirdStore);
+thirdStore.numCustomersPerHour();
+thirdStore.cookiesForEachHour();
 
 let forthStore = {
   storeName : 'Paris',
   custMaxHour : 20,
   custMinHour : 11,
   avgCookiePerSale : 2.3,
+  hourlyCustomers : [],
+  hourlyCookies : [],
+  numCustomersPerHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
+    }
+  },
+  cookiesForEachHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this .hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    }
+  }
 };
-// console.log(forthStore);
+console.log(forthStore);
+forthStore.numCustomersPerHour();
+forthStore.cookiesForEachHour();
 
 let fifthStore = {
   storeName : 'Lima',
   custMaxHour :  16,
   custMinHour : 2,
   avgCookiePerSale : 4.6,
+  hourlyCustomers : [],
+  hourlyCookies : [],
+  numCustomersPerHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
+    }
+  },
+  cookiesForEachHour : function(){
+    for(let i = 0; i < hours.length; i++){
+      this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    }
+  }
 };
-// console.log(fifthStore);
+ console.log(fifthStore);
+fifthStore.numCustomersPerHour();
+fifthStore.cookiesForEachHour();
+
 
 
 
@@ -119,7 +162,7 @@ for(let i = 0; i < storeArray.length; i++){
 
 
 
-    
+
 
 
 
