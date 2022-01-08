@@ -138,7 +138,7 @@ function random(min, max){
   return Math.round(Math.random() * (max - min) + min);
 }
 //                   0       1
-let storeArray = [firstStore];
+let storeArray = [firstStore, secondStore, thirdStore, forthStore, fifthStore];
 
 //How do we access the DOM
 let ulElement = document.getElementById('storeList');
@@ -148,16 +148,12 @@ let ulElement = document.getElementById('storeList');
 // console.log('store Array',storeArray[0].hourlyCookies);
 
 for(let i = 0; i < storeArray.length; i++){
-
   for(let j = 0; j < hours.length; j++){
     console.log('inside for loop J: ', hours[j]);
-
     // create need some li's
     let hourlyLi = document.createElement('li');
-
     // set the textContent to that li
     hourlyLi.textContent = hours[j] + ' ' + storeArray[i].hourlyCookies[j];
-
     // then we need to append that li to our ul variable ulElement
     ulElement.appendChild(hourlyLi);
 
