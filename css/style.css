@@ -19,6 +19,7 @@ nav {
   /* background-image: url('../img/salmon.png'); */
   background-size: 60px;
   text-align: center;
+  /* font-size: 30px; */
   color: rgb(168, 227, 237);
   height: 40px;
  /* background-repeat: no-repeat; */
@@ -75,5 +76,6 @@ footer {
   background-color: rgb(201, 31, 12);
   /* background-image: url('../img/salmon.png');  */
   background-size: 60px;
+  color: rgb(168, 227, 237);
 }
 

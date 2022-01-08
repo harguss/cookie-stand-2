@@ -157,7 +157,6 @@ for(let i = 0; i < storeArray.length; i++){
     // create variable
     // set the textContent to that li
     // then we need to append that li to our ul variable ulElement
-
 // let listItem = textContent
 
 
