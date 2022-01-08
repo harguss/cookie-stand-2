@@ -150,27 +150,16 @@ let ulElement = document.getElementById('storeList');
 for(let i = 0; i < storeArray.length; i++){
 
   for(let j = 0; j < hours.length; j++){
-    // console.log('inside for loop J: ', storeArray[i].hourlyCookies[j]);
+    console.log('inside for loop J: ', hours[j]);
 
     // create need some li's
     let hourlyLi = document.createElement('li');
 
     // set the textContent to that li
-    hourlyLi.textContent = storeArray[i].hourlyCookies[j];
+    hourlyLi.textContent = hours[j] + ' ' + storeArray[i].hourlyCookies[j];
 
     // then we need to append that li to our ul variable ulElement
     ulElement.appendChild(hourlyLi);
-
-
-
-
-    // let listItem = textContent
-
-
-
-
-
-
 
   }
 }
