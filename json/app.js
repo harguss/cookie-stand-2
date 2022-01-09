@@ -44,25 +44,54 @@ let fifthStore = new CookieStore('Lima', 16, 2, 4.6, [], []);
 
 
 
+
+
 // tableHeader method
 CookieStore.prototype.tableHeader = function(){
-
+//get top the html and grab an element
+  let cookieTable = document.getElementById('storeList');
+  let headerRow = document.createElement('tr');
+  let locationCell = document.createElement('td');
+  locationCell.textContent = 'Location';
+  headerRow.appendChild(locationCell);
+  console.log(headerRow);
+  //for loop to loop over our hourly array and display the times
+  for(let i = 0; i < hours.length; i++){
+    // console.log(hours[i]);
+    let hoursOpen = document.createElement('td');
+    hoursOpen.textContent = hours[i];
+    headerRow.appendChild(hoursOpen);
+  }
+  console.log(headerRow);
+  //actually add to the table
+  cookieTable.appendChild(headerRow);
 };
-// render body method
 
+
+
+// render body method
+CookieStore.prototype.render = function(){
+  //add render code
+};
 
 // tableFooter method
+CookieStore.prototype.footer = function(){
+  //footer Totals.
+};
 
 
+// for(let i = 0; i < storeArray.length; i++){
+//   for(let j = 0; j < hours.length; j++){
+//     // console.log('inside for loop J: ', hours[j]);
+//     // create need some li's
+//     let hourlyLi = document.createElement('li');
+//     // set the textContent to that li
+//     hourlyLi.textContent = hours[j] + ' ' + storeArray[i].hourlyCookies[j];
+//     // then we need to append that li to our ul variable ulElement
+//     ulElement.appendChild(hourlyLi);
 
-
-
-
-
-
-
-
-
+//   }
+// }
 
 
 
@@ -87,26 +116,12 @@ fifthStore.cookiesForEachHour();
 
 
 
+//render order
+CookieStore.prototype.tableHeader();
+
+//then we run the render for the body
+//for loop similar to demo code.
 
 
-
-// //How do we access the DOM
-// let ulElement = document.getElementById('storeList');
-// // console.log('this is our ul: ',ulElement);
-
-
-// // console.log('store Array',storeArray[0].hourlyCookies);
-
-// for(let i = 0; i < storeArray.length; i++){
-//   for(let j = 0; j < hours.length; j++){
-//     // console.log('inside for loop J: ', hours[j]);
-//     // create need some li's
-//     let hourlyLi = document.createElement('li');
-//     // set the textContent to that li
-//     hourlyLi.textContent = hours[j] + ' ' + storeArray[i].hourlyCookies[j];
-//     // then we need to append that li to our ul variable ulElement
-//     ulElement.appendChild(hourlyLi);
-
-//   }
-// }
-
+//then we run the footer
+// CookieStore.prototype.footer();
