@@ -51,7 +51,7 @@ CookieStore.prototype.tableHeader = function(){
 //get top the html and grab an element
   let cookieTable = document.getElementById('storeList');
   let headerRow = document.createElement('tr');
-  let locationCell = document.createElement('td');
+  let locationCell = document.createElement('th');
   locationCell.textContent = 'Location';
   headerRow.appendChild(locationCell);
   // console.log(headerRow);

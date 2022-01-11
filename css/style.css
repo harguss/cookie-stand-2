@@ -83,3 +83,40 @@ table {
   color: white;
   font-size: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* table */
+#storeList {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#storeList td, #storeList th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#storeList tr:nth-child(even){background-color: #124a94;}
+
+#storeList tr:hover {background-color: #ddd;}
+
+#storeList th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
