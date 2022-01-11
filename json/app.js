@@ -62,6 +62,10 @@ CookieStore.prototype.tableHeader = function(){
     hoursOpen.textContent = hours[i];
     headerRow.appendChild(hoursOpen);
   }
+  let totalCell = document.createElement('td');
+  totalCell.textContent = 'total';
+  headerRow.appendChild(totalCell);
+
   // console.log(headerRow);
   //actually add to the table
   cookieTable.appendChild(headerRow);
@@ -86,7 +90,7 @@ CookieStore.prototype.render = function() {
   }
 
   // get hourly cookie totals for render
-  
+
   // for(let i = 0; i < hours.length; i++){
   //   let hourlyData = document.createElement('td');
   //   hourlyData.textContent = this.cookiesForEachHour[i];
