@@ -90,7 +90,9 @@ CookieStore.prototype.render = function() {
   }
 
   // get hourly cookie totals for render
-
+  for(let i = 0; i < storeArray.length; i ++){
+    console.log('store cookies', storeArray[i].hourlyCookies);
+  }
   // for(let i = 0; i < hours.length; i++){
   //   let hourlyData = document.createElement('td');
   //   hourlyData.textContent = this.cookiesForEachHour[i];
@@ -98,7 +100,7 @@ CookieStore.prototype.render = function() {
   // }
 
 
-
+  // then we are going to add the totals in the last column.
   // //  let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
   // //   allStoreDayTotals.textContent = this.totalCookieSum;
   // //   locRow.appendChild(allStoreDayTotals);
