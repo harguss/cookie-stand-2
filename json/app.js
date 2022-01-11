@@ -79,25 +79,21 @@ CookieStore.prototype.render = function() {
 
   let locRow = document.createElement('tr');
   console.log('is this the header row', locRow);
-  let locationCell;
-  // console.log('store Name', firstStore.storeName);
-  for(let i = 0; i < storeArray.length; i++){
-    locationCell = document.createElement('td');
-    console.log('this td? ', locationCell);
-    console.log('this store name? ', storeArray[i].storeName);
-    locationCell.textContent = storeArray[i].storeName;
-    locRow.appendChild(locationCell);
-  }
+
+  let locationCell = document.createElement('td');
+  locationCell.textContent = this.storeName;
+  locRow.appendChild(locationCell);
+
 
   // get hourly cookie totals for render
   for(let i = 0; i < storeArray.length; i ++){
-    console.log('store cookies', storeArray[i].hourlyCookies);
+    for(let j = 0; j < hours.length; j++){
+      // console.log('for 15',this.hourlyCookies[j]);
+      let hourlyData = document.createElement('td');
+      hourlyData.textContent = this.hourlyCookies[j];
+      locRow.appendChild(hourlyData);
+    }
   }
-  // for(let i = 0; i < hours.length; i++){
-  //   let hourlyData = document.createElement('td');
-  //   hourlyData.textContent = this.cookiesForEachHour[i];
-  //   locRow.appendChild(hourlyData);
-  // }
 
 
   // then we are going to add the totals in the last column.
@@ -167,6 +163,11 @@ fifthStore.cookiesForEachHour();
 //render order
 CookieStore.prototype.tableHeader();
 
-CookieStore.prototype.render();
+firstStore.render();
+secondStore.render();
+thirdStore.render();
+forthStore.render();
+fifthStore.render();
+
 //then we run the footer
 CookieStore.prototype.footer();
