@@ -82,6 +82,7 @@ footer {
 table {
   color: white;
   font-size: 20px;
+  background-color: rgb(160, 131, 97);
 }
 
 
@@ -105,18 +106,21 @@ table {
 }
 
 #storeList td, #storeList th {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 3px solid #ddd;
+  padding: 20px;
 }
 
-#storeList tr:nth-child(even){background-color: #124a94;}
+#storeList tr:nth-child(even){background-color:rgb(201, 31, 12);}
+#storelist tr:nth-child(odd){background-color:rgb(168, 122, 84);}
 
-#storeList tr:hover {background-color: #ddd;}
+#storeList tr:hover {background-color: rgb(209, 78, 45);}
 
 #storeList th {
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #0476aa;
   color: white;
 }
