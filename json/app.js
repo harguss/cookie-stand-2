@@ -54,7 +54,7 @@ CookieStore.prototype.tableHeader = function(){
   let locationCell = document.createElement('td');
   locationCell.textContent = 'Location';
   headerRow.appendChild(locationCell);
-  console.log(headerRow);
+  // console.log(headerRow);
   //for loop to loop over our hourly array and display the times
   for(let i = 0; i < hours.length; i++){
     // console.log(hours[i]);
@@ -62,22 +62,54 @@ CookieStore.prototype.tableHeader = function(){
     hoursOpen.textContent = hours[i];
     headerRow.appendChild(hoursOpen);
   }
-  console.log(headerRow);
+  // console.log(headerRow);
   //actually add to the table
   cookieTable.appendChild(headerRow);
 };
 
 
+//body of table
+CookieStore.prototype.render = function() {
+  let cookieTable = document.getElementById('storeList');
+  console.log('is this the table?', cookieTable);
 
-// render body method
-CookieStore.prototype.render = function(){
-  //add render code
+  let locRow = document.createElement('tr');
+  console.log('is this the header row', locRow);
+  let locationCell;
+  // console.log('store Name', firstStore.storeName);
+  for(let i = 0; i < storeArray.length; i++){
+    locationCell = document.createElement('td');
+    console.log('this td? ', locationCell);
+    console.log('this store name? ', storeArray[i].storeName);
+    locationCell.textContent = storeArray[i].storeName;
+    locRow.appendChild(locationCell);
+  }
+
+  // get hourly cookie totals for render
+  
+  // for(let i = 0; i < hours.length; i++){
+  //   let hourlyData = document.createElement('td');
+  //   hourlyData.textContent = this.cookiesForEachHour[i];
+  //   locRow.appendChild(hourlyData);
+  // }
+
+
+
+  // //  let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
+  // //   allStoreDayTotals.textContent = this.totalCookieSum;
+  // //   locRow.appendChild(allStoreDayTotals);
+  // //   //this is where totals are coming from
+  cookieTable.appendChild(locRow); //putting row onto table
 };
 
-// tableFooter method
+// table row for footer
 CookieStore.prototype.footer = function(){
+  console.log('this is the footer');
   //footer Totals.
 };
+
+
+
 
 
 // for(let i = 0; i < storeArray.length; i++){
@@ -98,7 +130,7 @@ CookieStore.prototype.footer = function(){
 
 
 
-
+//save store and run the app stuff
 //store all the stores in an array to loop over once they have their data.
 let storeArray = [firstStore, secondStore, thirdStore, forthStore, fifthStore];
 console.log('storeArray', storeArray);
@@ -116,12 +148,19 @@ fifthStore.cookiesForEachHour();
 
 
 
-//render order
-CookieStore.prototype.tableHeader();
+
+
 
 //then we run the render for the body
 //for loop similar to demo code.
 
 
+
+
+
+//render order
+CookieStore.prototype.tableHeader();
+
+CookieStore.prototype.render();
 //then we run the footer
-// CookieStore.prototype.footer();
+CookieStore.prototype.footer();
