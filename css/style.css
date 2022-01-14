@@ -16,10 +16,12 @@ header {
   color: rgb(201, 31, 12);
   border-top: rgb(201, 31, 12) 40px;
 }
-nav {
+nav  {
   display:flex;
-  /* align-items: flex-end; */
-  justify-content: space-evenly;
+
+  /* align-items: flex-end;   */
+  /* flex-direction: row;   */
+  justify-content: space-evenly; 
   background-color: rgb(201, 31, 12);
   /* background-image: url('../img/salmon.png'); */
   background-size: 60px;
@@ -31,6 +33,7 @@ nav {
    padding-top: 10px;
      
  }
+ 
 
 body {
   overflow:auto; 
@@ -40,17 +43,22 @@ body {
   height: 3000px;
 }
 
+.logo {
+  width: 450px;
+  /* height: 150px; */
+  margin-top: 20px;
+}
 
 #BigWave {
   
-  /* background-image: url('../img/fishwallpaper.jpg'); */
+  
   background-image: url('../img/BigWave.jpg');
   background-repeat: no-repeat;
   height: 700px;
   background-size: 100%;
-  /* background-position: right, bottom; */
+  
   border: rgb(201, 31, 12), 10px;
-  /* height: 3000px; */
+  
 }  
 h1 {
   
@@ -68,12 +76,12 @@ h1 {
 }
 
 h2 {
-  background-image: url('../img/salmon.png');
+  /* background-image: url('../img/salmon.png'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25%;
   font-size: 70px;
-  padding: 50px; 
+  padding: 30px; 
   text-align: center;
 }
 p {
@@ -156,7 +164,7 @@ table {
 
 
 
-.navStyle li {
+/* .navStyle li {
   display: inline;
   
-}
+} */
