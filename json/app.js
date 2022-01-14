@@ -3,7 +3,7 @@ console.log('are you hearing the object literal js');
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-//constructor function
+//constructor function'Seattle', 65,            23,           6.3,              [],              []
 function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourlyCustomers, hourlyCookies){
   this.storeName = storeName;
   this.custMaxHour = custMaxHour;
@@ -16,6 +16,7 @@ function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourl
 //make prototype methods for our objects so they can so stuff.
 CookieStore.prototype.numCustomersPerHour = function(){
   for(let i = 0; i < hours.length; i++){
+    //push() built in array method.
     this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
   }
 };
@@ -24,7 +25,6 @@ CookieStore.prototype.cookiesForEachHour = function(){
     this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
   }
 };
-
 
 function random(min, max){
   return Math.round(Math.random() * (max - min) + min);
