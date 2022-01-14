@@ -8,13 +8,18 @@ html, body {
 }
 header {
   height: 220px;
+  /* background-image: url('../img/salmon.png'); */
   background-image: url('../img/waveBackground.jpeg');
+  
   /* background-repeat: no-repeat; */
   background-size: 50%;
   color: rgb(201, 31, 12);
   border-top: rgb(201, 31, 12) 40px;
 }
 nav {
+  display:flex;
+  /* align-items: flex-end; */
+  justify-content: space-evenly;
   background-color: rgb(201, 31, 12);
   /* background-image: url('../img/salmon.png'); */
   background-size: 60px;
@@ -28,29 +33,45 @@ nav {
  }
 
 body {
-  /* overflow:auto; */
+  overflow:auto; 
   /* width: 100%; */
   background-image: url('../img/free-japanese-fan-wallpapers.jpeg'); 
-  background-color: rgb(207, 224, 224); 
+  /* background-color: rgb(207, 224, 224);  */
+  height: 3000px;
 }
 
 
-#fishBackground {
-  background-image: url('../img/fishwallpaper.jpg');
+#BigWave {
+  
+  /* background-image: url('../img/fishwallpaper.jpg'); */
+  background-image: url('../img/BigWave.jpg');
   background-repeat: no-repeat;
+  height: 700px;
   background-size: 100%;
+  /* background-position: right, bottom; */
   border: rgb(201, 31, 12), 10px;
-  height: 3000px;
+  /* height: 3000px; */
 }  
 h1 {
+  
   font-family: 'Kanit', sans-serif;
   font-size: 110px;
   text-align: center;
   padding-top: 50px;
-  
+}
+.Story {
+  /* width: 700px; */
+  font-family: 'Kanit', sans-serif;
+  font-size: 30px;
+  color: rgb(201, 31, 12);
+
 }
 
 h2 {
+  background-image: url('../img/salmon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
   font-size: 70px;
   padding: 50px; 
   text-align: center;
@@ -73,10 +94,14 @@ div {
 
 
 footer {
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
   background-color: rgb(201, 31, 12);
   /* background-image: url('../img/salmon.png');  */
   background-size: 60px;
   color: rgb(168, 227, 237);
+  
 }
 
 table {
