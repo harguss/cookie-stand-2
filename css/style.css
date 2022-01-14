@@ -124,3 +124,14 @@ table {
   background-color: #0476aa;
   color: white;
 }
+
+
+
+/* sales page nav */
+
+
+
+.navStyle li {
+  display: inline;
+  
+}

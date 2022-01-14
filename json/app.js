@@ -86,14 +86,14 @@ CookieStore.prototype.render = function() {
 
 
   // get hourly cookie totals for render
-  for(let i = 0; i < storeArray.length; i ++){
-    for(let j = 0; j < hours.length; j++){
-      // console.log('for 15',this.hourlyCookies[j]);
-      let hourlyData = document.createElement('td');
-      hourlyData.textContent = this.hourlyCookies[j];
-      locRow.appendChild(hourlyData);
-    }
+
+  for(let j = 0; j < hours.length; j++){
+    // console.log('for 15',this.hourlyCookies[j]);
+    let hourlyData = document.createElement('td');
+    hourlyData.textContent = this.hourlyCookies[j];
+    locRow.appendChild(hourlyData);
   }
+
 
 
   // then we are going to add the totals in the last column.
