@@ -17,22 +17,15 @@ header {
   border-top: rgb(201, 31, 12) 40px;
 }
 nav  {
+  font-size: 25px;
+  color: rgb(99, 99, 235);
   display:flex;
-
-  /* align-items: flex-end;   */
-  /* flex-direction: row;   */
   justify-content: space-evenly; 
   background-color: rgb(201, 31, 12);
-  /* background-image: url('../img/salmon.png'); */
   background-size: 60px;
-  text-align: center;
-  /* font-size: 30px; */
-  color: rgb(168, 227, 237);
   height: 40px;
- /* background-repeat: no-repeat; */
-   padding-top: 10px;
-     
- }
+  padding-top: 10px;
+}
  
 
 body {
@@ -46,32 +39,41 @@ body {
 .logo {
   width: 450px;
   /* height: 150px; */
-  margin-top: 20px;
+  /* margin-top: 20px;
+} */
 }
-
 #BigWave {
-  
-  
   background-image: url('../img/BigWave.jpg');
   background-repeat: no-repeat;
   height: 700px;
   background-size: 100%;
   
   border: rgb(201, 31, 12), 10px;
-  
-}  
+}
+
 h1 {
+  display: flex;
+  justify-content: center;
+
   
   font-family: 'Kanit', sans-serif;
   font-size: 110px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 60px;
+}
+#smallwave {
+  background-image: url('../img/waveBackground.jpeg');
+  margin-top: 200px;
+  /* background-repeat: no-repeat; */
+  background-size: 150%;
+  height: 700px;
 }
 .Story {
   /* width: 700px; */
   font-family: 'Kanit', sans-serif;
   font-size: 30px;
   color: rgb(201, 31, 12);
+  margin-top: 50px;
 
 }
 
@@ -81,8 +83,16 @@ h2 {
   background-position: center;
   background-size: 25%;
   font-size: 70px;
-  padding: 30px; 
+  padding: 20px;
+   
   text-align: center;
+}
+h3 {
+  background-position: center;
+  background-size: 25%;
+  font-size: 70px;
+  padding-top: 50px;
+
 }
 p {
   padding-top: 30px;
@@ -106,11 +116,12 @@ footer {
   align-items: flex-end;
   justify-content: space-evenly;
   background-color: rgb(201, 31, 12);
-  /* background-image: url('../img/salmon.png');  */
-  background-size: 60px;
+  font-size: 25px;
   color: rgb(168, 227, 237);
   
 }
+
+
 
 table {
   color: white;
