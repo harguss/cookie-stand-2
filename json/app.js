@@ -2,6 +2,9 @@
 console.log('are you hearing the object literal js');
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+let cookieTable = document.getElementById('storeList');
+
+
 
 //constructor function'Seattle', 65,            23,           6.3,              [],              []
 function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourlyCustomers, hourlyCookies){
@@ -56,29 +59,27 @@ CookieStore.prototype.tableHeader = function(){
   headerRow.appendChild(totalCell);
   cookieTable.appendChild(headerRow);
 };
+///////
 
 
 //body of table
 CookieStore.prototype.render = function() {
-  let cookieTable = document.getElementById('storeList');
-  console.log('is this the table?', cookieTable);
   let locRow = document.createElement('tr');
-  console.log('is this the header row', locRow);
   let locationCell = document.createElement('td');
   locationCell.textContent = this.storeName;
   locRow.appendChild(locationCell);
-
+  let totalCookieSum = 0;
   for(let j = 0; j < hours.length; j++){
     let hourlyData = document.createElement('td');
     hourlyData.textContent = this.hourlyCookies[j];
+    totalCookieSum += this.hourlyCookies[j];
     locRow.appendChild(hourlyData);
   }
-
+  console.log('do we get a row total ',totalCookieSum);
   // Next Steps: total column
-  // let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
-  // allStoreDayTotals.textContent = this.totalCookieSum;
-  // locRow.appendChild(allStoreDayTotals);
-
+  let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
+  allStoreDayTotals.textContent = totalCookieSum;
+  locRow.appendChild(allStoreDayTotals);
   cookieTable.appendChild(locRow); //putting row onto table
 };
 
@@ -86,15 +87,37 @@ CookieStore.prototype.render = function() {
 
 // Next Next Step: table row for footer
 CookieStore.prototype.footer = function(){
-  console.log('this is the footer');
-  //footer Totals.
+  let footerRow = document.createElement ('tr');
+  let nameCell = document.createElement('td');
+  nameCell.textContent = 'Totals';
+  footerRow.appendChild(nameCell);
+  //loop through hours of the day
+  let totalTally = 0;
+  for(let i = 0; i < hours.length; i++){
+    let hourlyTally = 0;
+    for(let j = 0; j < storeArray.length; j++){
+      // console.log(storeArray[j].hourlyCookies[i]);
+      hourlyTally += storeArray[j].hourlyCookies[i];
+      totalTally += storeArray[j].hourlyCookies[i];
+    }
+    let totalCell = document.createElement('td');
+    totalCell.textContent = hourlyTally;
+    footerRow.appendChild(totalCell);
+  }//close 
+  let totalFinalCell = document.createElement('td');
+  totalFinalCell.textContent = totalTally;
+  footerRow.appendChild(totalFinalCell);
+  cookieTable.appendChild(footerRow);
 };
 
 
-//save store and run the app stuff
-//store all the stores in an array to loop over once they have their data.
-// let storeArray = [firstStore, secondStore, thirdStore, forthStore, fifthStore];
-// console.log('storeArray', storeArray);
+
+
+
+
+
+let storeArray = [firstStore, secondStore, thirdStore, forthStore, fifthStore];
+console.log('storeArray', storeArray);
 
 firstStore.numCustomersPerHour();
 firstStore.cookiesForEachHour();
@@ -116,6 +139,7 @@ secondStore.render();
 thirdStore.render();
 forthStore.render();
 fifthStore.render();
+
 
 //then we run the footer
 CookieStore.prototype.footer();
