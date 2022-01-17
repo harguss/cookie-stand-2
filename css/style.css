@@ -68,6 +68,12 @@ h1 {
   background-size: 150%;
   height: 700px;
 }
+.family {
+  float: left;
+  width: 550px;
+  margin-left: 100px;
+  margin-right: 20px;
+}
 .Story {
   /* width: 700px; */
   font-family: 'Kanit', sans-serif;
