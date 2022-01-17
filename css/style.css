@@ -39,16 +39,25 @@ body {
 .logo {
   width: 450px;
   /* height: 150px; */
-  /* margin-top: 20px;
-} */
-}
+  margin-top: 50px; 
+} 
+
 #BigWave {
   background-image: url('../img/BigWave.jpg');
   background-repeat: no-repeat;
   height: 700px;
+  
   background-size: 100%;
   
   border: rgb(201, 31, 12), 10px;
+}
+#BigWave p {
+  background-color: rgb(255, 255, 255);
+  /* opacity: 50%; */
+  width: fit-content;
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -73,14 +82,22 @@ h1 {
   width: 550px;
   margin-left: 100px;
   margin-right: 20px;
+  
 }
 .Story {
   /* width: 700px; */
   font-family: 'Kanit', sans-serif;
   font-size: 30px;
   color: rgb(201, 31, 12);
-  margin-top: 50px;
+  margin-top: 20px;
 
+}
+.Story p {
+  background-color: rgb(255, 255, 255);
+  margin-left: 100px;
+  margin-right: 90px;
+  margin-bottom: 10px;
+  
 }
 
 h2 {
@@ -89,6 +106,7 @@ h2 {
   background-position: center;
   background-size: 25%;
   font-size: 70px;
+  margin-bottom: 50px;
   padding: 20px;
    
   text-align: center;
@@ -97,7 +115,7 @@ h3 {
   background-position: center;
   background-size: 25%;
   font-size: 70px;
-  padding-top: 50px;
+  padding-top: 20px;
 
 }
 p {
