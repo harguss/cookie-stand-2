@@ -41,6 +41,9 @@ body {
   /* height: 150px; */
   margin-top: 50px; 
 } 
+section .logo {
+  margin-top: 0px;
+}
 
 #BigWave {
   background-image: url('../img/BigWave.jpg');
