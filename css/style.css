@@ -33,7 +33,7 @@ body {
   /* width: 100%; */
   background-image: url('../img/free-japanese-fan-wallpapers.jpeg'); 
   /* background-color: rgb(207, 224, 224);  */
-  height: 3000px;
+  height: 1000px;
 }
 
 .logo {
@@ -192,6 +192,12 @@ table {
   text-align: left;
   background-color: #0476aa;
   color: white;
+}
+#chat-form {
+  /* background-image: url('../img/wave-border.jpeg'); */
+  height: 70px;
+  background-color: rgb(165, 139, 119);
+
 }
 
 

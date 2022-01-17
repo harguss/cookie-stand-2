@@ -65,7 +65,23 @@
    </footer>
     
     
-    
+   <div>
+    <form id="chat-form">
+      <fieldset>
+        <legend>Chat Submission Form</legend>
+        <label for="who">Who:</label>
+        <input type="text"  name="who">
+        <label for="">Message:</label>
+        <input  type="text"   name="message">
+        <button type="submit" id="chat-submit">Send Chat</button>
+      </fieldset>
+    </form>
+    <button type="submit" id="chat-clear">Clear Chat</button>
+  </div>
+  <!-- chat list -->
+  <div>
+    <ul id="chat-list"></ul>
+  </div>
     <script src="json/app.js"></script>
   </body>
 </html>
