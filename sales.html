@@ -27,6 +27,34 @@
          <table id="storeList">
          </table>
       </main>
+      <div>
+         <!-- 'Seattle', 65, 23, 6.3, -->
+         <form id="formElement">
+            <fieldset>
+               <legend>New Store Submission</legend>
+               <br>
+               <label for="storeName">New Store:</label>
+               <input  type="text"   name="storeName" >
+               <br>
+               <label for="custMaxHour">CustMaxHour:</label>
+               <input  type="number"   name="custMaxHour" >
+               <br>
+               <label for="custMinHour">CustMinHour:</label>
+               <input  type="number"   name="custMinHour" >
+               <br>
+               <label for="avgCookiePerSale">AvgCookiePerSale:</label>
+               <input  type="number"   name="avgCookiePerSale" >
+               <br>
+               <br>
+               
+               <button type="submit" id="chat-submit">Add Store</button>
+               <!-- <button type="submit" id="chat-clear">Clear</button> -->
+            </fieldset>
+         </form>
+      </div>
+      <div>
+         <ul id="Store-list"></ul>
+      </div>
       <footer>
          <ul>
             <li>Seattle</li>
@@ -54,20 +82,6 @@
             <li>123456</li>
          </ul>
       </footer>
-      <div>
-         <form id="chat-form">
-            <fieldset>
-               <legend>New Store Submission Form</legend>
-               <label for="">New Store</label>
-               <input  type="text"   name="message">
-               <button type="submit" id="chat-submit">Add Store</button>
-            </fieldset>
-         </form>
-         <button type="submit" id="chat-clear">Clear</button>
-      </div>
-      <div>
-         <ul id="chat-list"></ul>
-      </div>
       <script src="json/app.js"></script>
    </body>
 </html>
