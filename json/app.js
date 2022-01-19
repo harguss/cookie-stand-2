@@ -3,6 +3,7 @@ console.log('are you hearing the object literal js');
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 let cookieTable = document.getElementById('storeList');
+let newStore;
 
 
 
@@ -75,7 +76,7 @@ CookieStore.prototype.render = function() {
     totalCookieSum += this.hourlyCookies[j];
     locRow.appendChild(hourlyData);
   }
-  console.log('do we get a row total ',totalCookieSum);
+  // console.log('do we get a row total ',totalCookieSum);
   // Next Steps: total column
   let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
   allStoreDayTotals.textContent = totalCookieSum;
@@ -103,18 +104,12 @@ CookieStore.prototype.footer = function(){
     let totalCell = document.createElement('td');
     totalCell.textContent = hourlyTally;
     footerRow.appendChild(totalCell);
-  }//close 
+  }//close
   let totalFinalCell = document.createElement('td');
   totalFinalCell.textContent = totalTally;
   footerRow.appendChild(totalFinalCell);
   cookieTable.appendChild(footerRow);
 };
-
-
-
-
-
-
 
 let storeArray = [firstStore, secondStore, thirdStore, forthStore, fifthStore];
 console.log('storeArray', storeArray);
@@ -141,5 +136,72 @@ forthStore.render();
 fifthStore.render();
 
 
-//then we run the footer
+// then we run the footer
 CookieStore.prototype.footer();
+
+
+
+// function finalRender(){
+//   CookieStore.prototype.tableHeader();
+//   // firstStore.render();
+//   // secondStore.render();
+//   // thirdStore.render();
+//   // forthStore.render();
+//   // fifthStore.render();
+//   for(let i = 0; i < storeArray.length; i++){
+// we will need to clear the table data first after each re-render.
+//     storeArray[i].render();
+//   }
+//   //then we run the footer
+//   CookieStore.prototype.footer();
+
+// }
+
+
+
+////////////////////////////////////////////////////////
+function handleFormSubmitted(event){
+  event.preventDefault();
+  console.log('we made it to the event function');
+  console.log('event',event.target.storeName.value);
+  console.log('event',event.target.custMaxHour.value);
+  console.log('event',event.target.custMinHour.value);
+  console.log('event',event.target.avgCookiePerSale.value);
+
+  let storeName = event.target.storeName.value;
+  console.log('location name', storeName);
+  let custMaxHour =event.target.custMaxHour.value;
+  console.log('max customers in an hour', custMaxHour);
+  let custMinHour = event.target.custMinHour.value;
+  console.log('Minimum customers in an hour', custMinHour);
+  let avgCookiePerSale = event.target.avgCookiePerSale;
+  console.log('Average numbers of cookies bought', avgCookiePerSale);
+
+
+
+
+
+  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+  console.log('new store', newStore);
+
+  newStore.numCustomersPerHour();
+  newStore.cookiesForEachHour();
+  newStore.render();
+
+  let form = document.getElementById('new-store');
+  form.reset();
+
+  // we re run all the stores from the storeArray
+//  finalRender();
+}
+
+// console.log('form?????',formElement);
+let formElement = document.getElementById('formElement');
+formElement.addEventListener('submit', handleFormSubmitted);
+
+formElement.addEventListener('submit', function(event){
+  event.preventDefault();
+  // console.log('clickin on submit.');
+});
+
+//  finalRender();
