@@ -192,7 +192,7 @@ function handleFormSubmitted(event){
   form.reset();
 
   // we re run all the stores from the storeArray
- finalRender();
+//  finalRender();
 }
 
 // console.log('form?????',formElement);
@@ -204,4 +204,4 @@ formElement.addEventListener('submit', function(event){
   // console.log('clickin on submit.');
 });
 
- finalRender();
+//  finalRender();
