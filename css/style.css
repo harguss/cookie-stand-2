@@ -173,6 +173,14 @@ figcaption {
   margin-right: 60px;
   border: 10px solid #0476aa;
 }
+.bottomlogo {
+  display: flex;
+  justify-content: center;
+  margin-top: 340px;
+  margin-left: 230px;
+  size: 100px;
+  
+}
 
 
 
