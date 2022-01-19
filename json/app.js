@@ -192,16 +192,16 @@ function handleFormSubmitted(event){
   form.reset();
 
   // we re run all the stores from the storeArray
-  // finalRender();
+ finalRender();
 }
 
 // console.log('form?????',formElement);
 let formElement = document.getElementById('formElement');
 formElement.addEventListener('submit', handleFormSubmitted);
 
-// formElement.addEventListener('submit', function(event){
-//   event.preventDefault();
-//   // console.log('clickin on submit.');
-// });
+formElement.addEventListener('submit', function(event){
+  event.preventDefault();
+  // console.log('clickin on submit.');
+});
 
-// finalRender();
+ finalRender();
