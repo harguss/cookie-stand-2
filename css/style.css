@@ -150,6 +150,13 @@ div {
   margin-right: 30px;
   margin-left: 130px;
 }
+figcaption {
+  background-color: rgb(201, 31, 12);
+  color: white;
+  padding: 2px;
+  text-align: center;
+  margin-right: 50px;
+}
 .shirt {
   margin-right: 60px;
   height: 350px;
