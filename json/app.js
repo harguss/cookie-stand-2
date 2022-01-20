@@ -1,12 +1,14 @@
 'use strict';
 console.log('are you hearing the object literal js');
 
+
+// 1. Declare Global Variables
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 let cookieTable = document.getElementById('storeList');
 let newStore;
 
 
-
+// 1. Declare Constructor functions - name should be capitalized!
 function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourlyCustomers, hourlyCookies){
   this.storeName = storeName;
   this.custMaxHour = custMaxHour;
@@ -15,7 +17,7 @@ function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourl
   this.hourlyCustomers = hourlyCustomers;
   this.hourlyCookies = hourlyCookies;
 }
-
+// 1. Declare prototype methods
 CookieStore.prototype.numCustomersPerHour = function(){
   for(let i = 0; i < hours.length; i++){
     this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
@@ -26,10 +28,16 @@ CookieStore.prototype.cookiesForEachHour = function(){
     this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
   }
 };
-
+// 1. Declare regular functions
 function random(min, max){
   return Math.round(Math.random() * (max - min) + min);
 }
+
+
+
+
+
+//----------------------------------------------------------------------------------------------//
 
 let firstStore = new CookieStore('Seattle', 65, 23, 6.3, [], []);
 let secondStore = new CookieStore('Tokyo', 24, 3, 1.2, [], []);
@@ -55,8 +63,6 @@ CookieStore.prototype.tableHeader = function(){
   headerRow.appendChild(totalCell);
   cookieTable.appendChild(headerRow);
 };
-
-
 CookieStore.prototype.render = function() {
   let locRow = document.createElement('tr');
   let locationCell = document.createElement('td');
@@ -74,8 +80,6 @@ CookieStore.prototype.render = function() {
   locRow.appendChild(allStoreDayTotals);
   cookieTable.appendChild(locRow);
 };
-
-
 CookieStore.prototype.footer = function(){
   let footerRow = document.createElement ('tr');
   let nameCell = document.createElement('td');
@@ -113,7 +117,32 @@ fifthStore.numCustomersPerHour();
 fifthStore.cookiesForEachHour();
 
 
-//render order
+
+//----------------------------------------------------------------------------------------------//
+
+// 1. Add event listeners and handlers
+function handleFormSubmitted(event){
+  event.preventDefault();
+  let storeName = event.target.storeName.value;
+  let custMaxHour =event.target.custMaxHour.value;
+  let custMinHour = event.target.custMinHour.value;
+  let avgCookiePerSale = event.target.avgCookiePerSale;
+  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+  newStore.numCustomersPerHour();
+  newStore.cookiesForEachHour();
+  newStore.render();
+  let form = document.getElementById('new-store');
+  form.reset();
+//finalRender();
+}
+let formElement = document.getElementById('formElement');
+formElement.addEventListener('submit', handleFormSubmitted);
+
+
+
+
+
+// 1. Call functions
 CookieStore.prototype.tableHeader();
 
 firstStore.render();
@@ -121,7 +150,6 @@ secondStore.render();
 thirdStore.render();
 forthStore.render();
 fifthStore.render();
-
 
 // then we run the footer
 CookieStore.prototype.footer();
@@ -138,32 +166,6 @@ CookieStore.prototype.footer();
 //   CookieStore.prototype.footer();
 
 // }
-
-
-
-function handleFormSubmitted(event){
-  event.preventDefault();
-  let storeName = event.target.storeName.value;
-  let custMaxHour =event.target.custMaxHour.value;
-  let custMinHour = event.target.custMinHour.value;
-  let avgCookiePerSale = event.target.avgCookiePerSale;
-
-  //NEED TO ADD 'LET' TO THE NEWSTORE VARIABLE
-  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
-
-  newStore.numCustomersPerHour();
-  newStore.cookiesForEachHour();
-  newStore.render();
-
-  let form = document.getElementById('new-store');
-  form.reset();
-
-  // we re run all the stores from the storeArray
-//  finalRender();
-}
-
-let formElement = document.getElementById('formElement');
-formElement.addEventListener('submit', handleFormSubmitted);
 
 
 
