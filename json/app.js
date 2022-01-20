@@ -1,13 +1,13 @@
 'use strict';
 console.log('are you hearing the object literal js');
 
+
+//Declare Global variables!!!
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 let cookieTable = document.getElementById('storeList');
 let newStore;
 
-
-
-//constructor function'Seattle', 65,            23,           6.3,              [],              []
+//declare constructor function-name should be capitolized!!!!!
 function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourlyCustomers, hourlyCookies){
   this.storeName = storeName;
   this.custMaxHour = custMaxHour;
@@ -16,11 +16,9 @@ function CookieStore(storeName,custMaxHour, custMinHour, avgCookiePerSale, hourl
   this.hourlyCustomers = hourlyCustomers;
   this.hourlyCookies = hourlyCookies;
 }
-
-//make prototype methods for our objects so they can so stuff.
+//declare prototype methods
 CookieStore.prototype.numCustomersPerHour = function(){
   for(let i = 0; i < hours.length; i++){
-    //push() built in array method.
     this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
   }
 };
@@ -30,9 +28,15 @@ CookieStore.prototype.cookiesForEachHour = function(){
   }
 };
 
+//Declare regular functions
 function random(min, max){
   return Math.round(Math.random() * (max - min) + min);
 }
+
+
+
+
+
 
 //call new for each store
 let firstStore = new CookieStore('Seattle', 65, 23, 6.3, [], []);
@@ -43,7 +47,7 @@ let fifthStore = new CookieStore('Lima', 16, 2, 4.6, [], []);
 
 
 
-// tableHeader method
+
 CookieStore.prototype.tableHeader = function(){
   let cookieTable = document.getElementById('storeList');
   let headerRow = document.createElement('tr');
@@ -60,10 +64,7 @@ CookieStore.prototype.tableHeader = function(){
   headerRow.appendChild(totalCell);
   cookieTable.appendChild(headerRow);
 };
-///////
 
-
-//body of table
 CookieStore.prototype.render = function() {
   let locRow = document.createElement('tr');
   let locationCell = document.createElement('td');
@@ -76,17 +77,13 @@ CookieStore.prototype.render = function() {
     totalCookieSum += this.hourlyCookies[j];
     locRow.appendChild(hourlyData);
   }
-  // console.log('do we get a row total ',totalCookieSum);
-  // Next Steps: total column
+
   let allStoreDayTotals = document.createElement('td'); //adds sums to end of table
   allStoreDayTotals.textContent = totalCookieSum;
   locRow.appendChild(allStoreDayTotals);
   cookieTable.appendChild(locRow); //putting row onto table
 };
 
-
-
-// Next Next Step: table row for footer
 CookieStore.prototype.footer = function(){
   let footerRow = document.createElement ('tr');
   let nameCell = document.createElement('td');
@@ -126,82 +123,82 @@ fifthStore.numCustomersPerHour();
 fifthStore.cookiesForEachHour();
 
 
-//render order
+//Add event listners and handlers
+function handleFormSubmitted(event){
+  event.preventDefault();
+  let storeName = event.target.storeName.value;
+  let custMaxHour = event.target.custMaxHour.value;
+  let custMinHour = event.target.custMinHour.value;
+  let avgCookiePerSale = event.target.avgCookiePerSale.value;
+  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+  newStore.numCustomersPerHour();
+  newStore.cookiesForEachHour();
+  newStore.render();
+  let form = document.getElementById('new-store');
+  form.reset();
+  //final render()
+}
+let formElement = document.getElementById(formElement);
+formElement.addEventListener('submit', 'handelFormSubmitted');
+
+
+//CallFunctions
+//You still need to do this
+//1.run the header function
 CookieStore.prototype.tableHeader();
+//2.then run stores render ();
+
 
 firstStore.render();
 secondStore.render();
 thirdStore.render();
 forthStore.render();
 fifthStore.render();
-
-
-// then we run the footer
+//3. then we run the footer to get totals
 CookieStore.prototype.footer();
 
 
 
 // function finalRender(){
 //   CookieStore.prototype.tableHeader();
-//   // firstStore.render();
-//   // secondStore.render();
-//   // thirdStore.render();
-//   // forthStore.render();
-//   // fifthStore.render();
+
 //   for(let i = 0; i < storeArray.length; i++){
-// we will need to clear the table data first after each re-render.
+
 //     storeArray[i].render();
 //   }
-//   //then we run the footer
+
 //   CookieStore.prototype.footer();
 
+
+
+
+
+
+
+
+
+//   newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+//   console.log('new store', newStore);
+
+//   newStore.numCustomersPerHour();
+//   newStore.cookiesForEachHour();
+//   newStore.render();
+
+//   let form = document.getElementById('new-store');
+//   form.reset();
+
+//   // we re run all the stores from the storeArray
+// //  finalRender();
 // }
 
+// // console.log('form?????',formElement);
+// let formElement = document.getElementById('formElement');
+// formElement.addEventListener('submit', handleFormSubmitted);
 
-
-////////////////////////////////////////////////////////
-function handleFormSubmitted(event){
-  event.preventDefault();
-  console.log('we made it to the event function');
-  console.log('event',event.target.storeName.value);
-  console.log('event',event.target.custMaxHour.value);
-  console.log('event',event.target.custMinHour.value);
-  console.log('event',event.target.avgCookiePerSale.value);
-
-  let storeName = event.target.storeName.value;
-  console.log('location name', storeName);
-  let custMaxHour =event.target.custMaxHour.value;
-  console.log('max customers in an hour', custMaxHour);
-  let custMinHour = event.target.custMinHour.value;
-  console.log('Minimum customers in an hour', custMinHour);
-  let avgCookiePerSale = event.target.avgCookiePerSale;
-  console.log('Average numbers of cookies bought', avgCookiePerSale);
-
-
-
-
-
-  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
-  console.log('new store', newStore);
-
-  newStore.numCustomersPerHour();
-  newStore.cookiesForEachHour();
-  newStore.render();
-
-  let form = document.getElementById('new-store');
-  form.reset();
-
-  // we re run all the stores from the storeArray
-//  finalRender();
-}
-
-// console.log('form?????',formElement);
-let formElement = document.getElementById('formElement');
-formElement.addEventListener('submit', handleFormSubmitted);
-
-formElement.addEventListener('submit', function(event){
-  event.preventDefault();
-  // console.log('clickin on submit.');
-});
+// formElement.addEventListener('submit', function(event){
+//   event.preventDefault();
+//   // console.log('clickin on submit.');
+// });
 
 //  finalRender();
+
