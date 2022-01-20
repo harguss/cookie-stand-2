@@ -35,9 +35,9 @@ function random(min, max){
 
 
 
-
-
 //----------------------------------------------------------------------------------------------//
+
+
 
 let firstStore = new CookieStore('Seattle', 65, 23, 6.3, [], []);
 let secondStore = new CookieStore('Tokyo', 24, 3, 1.2, [], []);
@@ -120,6 +120,8 @@ fifthStore.cookiesForEachHour();
 
 //----------------------------------------------------------------------------------------------//
 
+
+
 // 1. Add event listeners and handlers
 function handleFormSubmitted(event){
   event.preventDefault();
@@ -143,30 +145,36 @@ formElement.addEventListener('submit', handleFormSubmitted);
 
 
 // 1. Call functions
+//---------- this is what you have left to refactor---------------------//
+//A. run the header function
 CookieStore.prototype.tableHeader();
-
+//B. then run the stores render();
 firstStore.render();
 secondStore.render();
 thirdStore.render();
 forthStore.render();
 fifthStore.render();
-
-// then we run the footer
+//C. then we run the footer to get the totals.
 CookieStore.prototype.footer();
 
 
 
+
+
+//------- you will use the below code for running the render on all stores and the new ones entered through your form.---//
 // function finalRender(){
 //   CookieStore.prototype.tableHeader();
 //   for(let i = 0; i < storeArray.length; i++){
-// we will need to clear the table data first after each re-render.
 //     storeArray[i].render();
 //   }
-//   //then we run the footer
 //   CookieStore.prototype.footer();
-
 // }
 
 
+//------- This function call will run to populate the table initially and then after we add a new store we run the same call on line 138---/
+
 
 //  finalRender();
+
+
+//------- We do this because the allstores array will have our intial five store and the new one added is getting pushed into that array as well, so when we just rerun the render on that array again we get all the stores re-displayed on to the page. You will have to google how to clear a <table> before re-rendering the stores, or you will re render with all the original renders and then the new render with the new store. This is what usually happens as we build out our site, we make things work and then refactor those things inorder to handle different cases and outcomes of our architecture------//
