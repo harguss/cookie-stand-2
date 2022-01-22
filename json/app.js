@@ -134,12 +134,12 @@ function handleFormSubmitted(event){
   newStore.numCustomersPerHour();
   newStore.cookiesForEachHour();
   newStore.render();
-  let form = document.getElementById('new-store');
+  let form = document.getElementById('formElement');
   form.reset();
   //final render()
 }
-let formElement = document.getElementById(formElement);
-formElement.addEventListener('submit', 'handelFormSubmitted');
+let formElement = document.getElementById('formElement');
+formElement.addEventListener('submit', handleFormSubmitted);
 
 
 //CallFunctions
@@ -147,28 +147,53 @@ formElement.addEventListener('submit', 'handelFormSubmitted');
 //1.run the header function
 CookieStore.prototype.tableHeader();
 //2.then run stores render ();
-
-
 firstStore.render();
 secondStore.render();
 thirdStore.render();
 forthStore.render();
 fifthStore.render();
 //3. then we run the footer to get totals
+
 CookieStore.prototype.footer();
+var Table = document.getElementById("mytable");
+ Table.innerHTML = "";
 
+ function finalRender(){
+  cookieTable.innerHTML = '';
 
+//////////
+function handleFormSubmitted(event){
+  event.preventDefault();
+  // console.log('we made it to the event function');
+  // console.log('event',event.target.storeName.value);
+  // console.log('event',event.target.custMaxHour.value);
+  // console.log('event',event.target.custMinHour.value);
+  // console.log('event',event.target.avgCookiePerSale.value);
+
+  let storeName = event.target.storeName.value;
+  // console.log('location name', storeName);
+  let custMaxHour =event.target.custMaxHour.value;
+  // console.log('max customers in an hour', custMaxHour);
+  let custMinHour = event.target.custMinHour.value;
+  // console.log('Minimum customers in an hour', custMinHour);
+  let avgCookiePerSale = event.target.avgCookiePerSale;
+  // console.log('Average numbers of cookies bought', avgCookiePerSale);
+newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+newStore.numCustomersPerHour();
+newStore.cookiesForEachHour();
+newStore,render();
+let form = document.getElementById('formElement');
+formElement.addEventListener('submit', 'handleFormSubmitted');
+/////////
 
 // function finalRender(){
-//   CookieStore.prototype.tableHeader();
+  CookieStore.prototype.tableHeader();
 
-//   for(let i = 0; i < storeArray.length; i++){
+   for(let i = 0; i < storeArray.length; i++){
+   storeArray[i].render();
+   }
 
-//     storeArray[i].render();
-//   }
-
-//   CookieStore.prototype.footer();
-
+   CookieStore.prototype.footer();
 
 
 
@@ -176,29 +201,29 @@ CookieStore.prototype.footer();
 
 
 
+finalRender();
 
-//   newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
-//   console.log('new store', newStore);
+  newStore = new CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, [], []);
+  console.log('new store', newStore);
 
-//   newStore.numCustomersPerHour();
-//   newStore.cookiesForEachHour();
-//   newStore.render();
+  newStore.numCustomersPerHour();
+  newStore.cookiesForEachHour();
+  newStore.render();
 
-//   let form = document.getElementById('new-store');
-//   form.reset();
+  let form = document.getElementById('new-store');
+  form.reset();
 
-//   // we re run all the stores from the storeArray
-// //  finalRender();
-// }
-
-// // console.log('form?????',formElement);
-// let formElement = document.getElementById('formElement');
-// formElement.addEventListener('submit', handleFormSubmitted);
-
-// formElement.addEventListener('submit', function(event){
-//   event.preventDefault();
-//   // console.log('clickin on submit.');
-// });
-
+  // we re run all the stores from the storeArray
 //  finalRender();
+}
 
+// console.log('form?????',formElement);
+let formElement = document.getElementById('formElement');
+formElement.addEventListener('submit', handleFormSubmitted);
+
+formElement.addEventListener('submit', function(event){
+  event.preventDefault();
+  // console.log('clickin on submit.');
+});
+
+finalRender();
